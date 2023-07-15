@@ -15,7 +15,7 @@ export default class ShopItemClass extends Component {
             <div class="highlight-window mobile"><div class="highlight-overlay"></div></div>
             <div class="divider"></div>
             <div class="purchase-info">
-              <div class="price">{item.price}{item.currency}</div>
+              <div class="price">{item.currency}{item.price}</div>
               <button>Добавить в корзину</button>
             </div>
           </div>
