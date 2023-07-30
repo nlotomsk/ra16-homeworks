@@ -1,0 +1,31 @@
+/* .column {
+    display: grid;
+    grid-template-columns:150px 150px 150px;
+    grid-column: auto;
+    column-gap: 30px;
+} */
+
+.column {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+    height: 1000px; 
+    flex-flow: row wrap;
+    /* align-content: flex-start; */
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.column img {
+    box-sizing: border-box;
+    width: 200px;
+    /* height: 100%; */
+}    
+
+
+.column_text {
+    display: grid;
+    text-align: center;
+    grid-column: 2;
+}
+     
