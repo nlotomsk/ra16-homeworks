@@ -18,7 +18,7 @@ function ButtonFilter() {
             <button className={styles.btn_1} 
         onClick={()=>console.log("All")}
         >All</button></div>
-        {/* {imgfoto.length ? (
+        {imgfoto.length ? (
             [...new Set(array)].map(cat => (
                 <div role="group" aria-label="First group">
                     <button className={styles.btn_1} 
@@ -29,7 +29,7 @@ function ButtonFilter() {
                     
             : <div>
             <h1>Нет категорий</h1>
-        </div>} */}
+        </div>}
     </div >
 }
 

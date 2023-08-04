@@ -1,6 +1,6 @@
 export const imgfoto = [{
     img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/mon.jpg",
-    category: "Business Cards"
+    category: "Business Cards_1"
   }, {
     img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/200.jpg",
     category: "Websites"
