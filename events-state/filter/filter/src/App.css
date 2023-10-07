@@ -1,50 +1,54 @@
-.App {
+* {
+	margin: 0;
+  padding: 0;
+}
+
+.portfolioList {
+  
+
+}
+
+#root {
   text-align: center;
-  margin: 30px;
 }
 
-.image-column {
-  margin: 50px;
-  text-align: center;
-  /* column-count: 2; */
-  grid: 100px / 200px;
+body, html {
+  font-family: multi;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.portfolio {
+	display: inline-block;
+  margin: 15px 0;
+  column-count: 3;
+  column-gap: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.filters {
+	margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.filter{
+	margin-right: 5px;
+	padding: 5px 8px;
+	background-color: #ffffff;
+	outline: none;
+	border: 1px solid gray;
 }
 
-.App-link {
-  color: #61dafb;
+.active {
+	background-color: gray;
+	color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.project {
+	width: 100%;
+	margin-bottom: 10px;
 }
 
-/* .column-img {
-  grid-auto-columns: 33.3%;
-} */
+.img {
+  width: 100%;
+}
+
+.projects {
+  column-count: 3;
+}

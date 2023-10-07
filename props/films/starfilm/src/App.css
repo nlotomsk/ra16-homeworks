@@ -1,0 +1,19 @@
+.cards {
+  display: flex;
+  align-items: center;
+}
+
+.card-body-stars {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 200px;
+  height: 100px;
+  margin: 30px;
+  padding: 8px;
+  list-style: none;
+}
+
+.card-body-stars li {
+  margin-top: 20px;
+}

@@ -1,17 +1,10 @@
-import ProjectList from './components/ProjectList';
-import ButtonFilter from './components/button_group/Sandbox'
+import React from 'react';
+import Portfolio from './components/Portfolio';
 import './App.css';
+import {filters, projects} from './data'
 
-function App() {
-  return (<div>
-    <div>
-      <ButtonFilter/>
-    </div>
-    <div>
-        <ProjectList/>
-    </div>
-    </div>
-  );
+export default function App () {
+    return (
+    <Portfolio filters={filters} projects={projects}/>
+    )
 }
-
-export default App;
