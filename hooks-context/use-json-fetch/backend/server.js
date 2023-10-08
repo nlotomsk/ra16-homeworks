@@ -32,6 +32,6 @@ app.get("/loading", async (req, res) => {
   res.send(JSON.stringify({ status: "ok" }));
 });
 
-const port = process.env.PORT || 7070;
+const port = process.env.PORT || 17070;
 app.listen(port, () => console.log(`The server is running on port ${port}.`));
 ``;
