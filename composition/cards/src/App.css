@@ -1,0 +1,13 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+
+.card {
+  width: 18rem;
+  margin: auto;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  background: #868e96;
+  content: 'fvlsfbl';
+}
