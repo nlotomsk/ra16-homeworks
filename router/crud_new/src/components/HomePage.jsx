@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Header from "./Header/Header"
 import '../App.css'
 
 const HomePage = () => {
@@ -14,7 +15,9 @@ const HomePage = () => {
   }, []);
 
   return (
+    
     <div>
+      <Header/>
       <div className="post-form">
         <div className="post-form__actions">
           <NavLink className="menu__item btn" to="/posts/new">
