@@ -1,67 +1,49 @@
-import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
+const http = require("http");
+const Koa = require("koa");
+const Router = require("koa-router");
+const cors = require("koa2-cors");
+const koaBody = require("koa-body");
 
-const app = express();
+const app = new Koa();
 
 app.use(cors());
-app.use(
-  bodyParser.json({
-    type(req) {
-      return true;
-    },
-  })
-);
-app.use(function (req, res, next) {
-  res.setHeader("Content-Type", "application/json");
-  next();
-});
+app.use(koaBody({ json: true }));
 
-let posts = [];
+let posts = [{ id: 0, created: "01.02.2023", content: "fdhgvkj" }];
 let nextId = 1;
 
-app.get("/posts", (req, res) => {
-  res.send(JSON.stringify(posts));
+const router = new Router();
+
+router.get("/posts", async (ctx, next) => {
+  ctx.response.body = posts;
 });
 
-app.get("/posts/:id", (req, res) => {
-  const postId = Number(req.params.id);
-  const index = posts.findIndex((o) => o.id === postId);
-  res.send(JSON.stringify({ post: posts[index] }));
+router.post("/posts", async (ctx, next) => {
+  const { id, content } = ctx.request.body;
+
+  if (id !== 0) {
+    posts = posts.map((o) => (o.id !== id ? o : { ...o, content: content }));
+    ctx.response.status = 204;
+    return;
+  }
+
+  posts.push({ ...ctx.request.body, id: nextId++, created: Date.now() });
+  ctx.response.status = 204;
 });
 
-app.post("/posts", (req, res) => {
-  posts.push({ ...req.body, id: nextId++, created: Date.now() });
-  res.status(204);
-  res.end();
-});
-
-app.put("/posts/:id", (req, res) => {
-  const postId = Number(req.params.id);
-  posts = posts.map((o) => {
-    if (o.id === postId) {
-      return {
-        ...o,
-        ...req.body,
-        id: o.id,
-      };
-    }
-    return o;
-  });
-  res.status(204).end();
-});
-
-app.delete("/posts/:id", (req, res) => {
-  const postId = Number(req.params.id);
+router.delete("/posts/:id", async (ctx, next) => {
+  const postId = Number(ctx.params.id);
   const index = posts.findIndex((o) => o.id === postId);
   if (index !== -1) {
     posts.splice(index, 1);
   }
-  res.status(204);
-  res.end();
+  ctx.response.status = 204;
 });
 
-const port = process.env.PORT || 7070;
-app.listen(port, () =>
-  console.log(`The server is running on http://localhost:${port}`)
-);
+app.use(router.routes()).use(router.allowedMethods());
+
+const port = process.env.PORT || 7777;
+const server = http.createServer(app.callback());
+server.listen(port, () => {
+  console.log(`server started http://localhost:${port}`);
+});
