@@ -2,4 +2,139 @@
 
 body {
     font-family: 'Noto Sans', sans-serif;
+    background-color: #11071F;
 }
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    background-color: #1A0B2E;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    margin-bottom: 103px;
+    container-type: inline-size;
+    container-name: header;
+}
+
+.gradient {
+    background-image: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 364px;
+    height: 408px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.header__title {
+    margin: 0;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.header__title::before,
+.header__title::after {
+    content: '';
+    background-image: url(./img/free-icon-facebook-733547.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    width: 24px;
+    height: 17px;
+}
+
+.header__container {
+    max-width: 1172px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+@container header (min-width: 800px) {
+    .header__title {
+        font-size: clamp(18px, 2cqw, 30px);
+        justify-content: flex-start;
+    }
+
+    .header__title::before {
+        width: clamp(24px, 3cqw, 51px);
+        height: clamp(17px, 3cqw, 36px);
+    }
+
+    .header__title::after {
+        display: none;
+    }
+}
+
+/* .article-post {
+    background-color: #2c1250;
+    border-top: 5px solid #C1FF75;
+    color: #FFF;
+    line-height: 1.5;
+    padding: 25px 18px;
+}
+
+.article-post__author {
+    color: #C1FF75;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.article-post__link {
+    color: #FFF;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.article-post__text {
+    font-size: 14px;
+}
+
+.btn {
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #8F4DD1;
+    border-radius: 10px;
+    padding: 9px 30px;
+}
+
+.avatar {
+    margin: 0;
+}
+
+.article__picture {
+    position: relative;
+}
+
+.article__picture::before {
+    content: '';
+    background-image: url(./img/free-icon-facebook-733547.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    width: 10px;
+    height: 10px;
+}
+
+.avatar__img {
+    width: 50px;
+    height: 50px;
+} */

@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NewPost from "./components/NewPost";
-import HomePage from "./components/HomePage";
-import ViewPost from "./components/ViewPost";
-import EditPost from "./components/EditPost";
+import NewPost from "./components/NewPost/NewPost";
+import HomePage from "./components/HomePage/HomePage";
+import ViewPost from "./components/ViewPost/ViewPost";
+import EditPost from "./components/EditPost/EditPost";
 import './App.css';
 
 function App() {
